@@ -1,7 +1,7 @@
 :root {
     --primary: #DB1F48;
     --secondary: #51CFED;
-    --light: #004369;
+    --light: #f8f2f0;
     --dark: #060315;
 }
 
@@ -70,8 +70,6 @@
     justify-content: center;
     font-weight: normal;
 }
-
-
 
 
 /*** Navbar ***/
@@ -298,6 +296,10 @@
     }
 }
 
+.bg-custom {
+    background-color: #004369;
+}
+
 
 /*** Feature ***/
 @media (min-width: 992px) {
@@ -483,7 +485,7 @@
 }
 
 .footer .btn.btn-social:hover {
-    color: var(--primary);
+    color: #25d366;
 }
 
 .footer .btn.btn-link {
