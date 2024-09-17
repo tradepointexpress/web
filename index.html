@@ -60,7 +60,7 @@
             <a href="contact.html" class="nav-item nav-link">Contáctanos</a>
         </div>
         <div class="d-none d-lg-flex align-items-center pe-lg-5 contact-container">
-            <h4 class="m-0 me-3 contact-text"><i class="fa fa-phone me-3 contact-icon"></i>+584142323332</h4>
+            <h4 class="m-0 me-3 contact-text"><i class="fa fa-phone me-3 contact-icon"></i>+584122376117</h4>
         </div>
     </div>
 </nav>
@@ -326,7 +326,7 @@
 
 
 
-    <!-- Contact Start -->
+<!-- Contact Start -->
 <div class="container-xxl py-5">
     <div class="container py-5">
         <div class="row g-5 align-items-center">
@@ -338,25 +338,25 @@
                     <i class="fa fa-headphones fa-2x flex-shrink-0 bg-primary p-3 text-white"></i>
                     <div class="ps-4">
                         <h6>¿Tienes alguna consulta?</h6>
-                        <h3 class="text-primary m-0">+58 424 123 4567</h3>
+                        <h3 class="text-primary m-0">+584122376117</h3>
                     </div>
                 </div>
             </div>
             <div class="col-lg-7">
                 <div class="bg-light text-center p-5 wow fadeIn" data-wow-delay="0.5s">
-                    <form>
+                    <form id="contact-form">
                         <div class="row g-3">
                             <div class="col-12 col-sm-6">
-                                <input type="text" class="form-control border-0" placeholder="Tu Nombre" style="height: 55px;">
+                                <input type="text" id="nombre" class="form-control border-0" placeholder="Tu Nombre" style="height: 55px;" required>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <input type="email" class="form-control border-0" placeholder="Tu Correo" style="height: 55px;">
+                                <input type="email" id="email" class="form-control border-0" placeholder="Tu Correo" style="height: 55px;" required>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <input type="text" class="form-control border-0" placeholder="Tu Teléfono" style="height: 55px;">
+                                <input type="text" id="telefono" class="form-control border-0" placeholder="Tu Teléfono" style="height: 55px;" required>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <select class="form-select border-0" style="height: 55px;">
+                                <select id="tipoServicio" class="form-select border-0" style="height: 55px;" required>
                                     <option selected>Selecciona el Tipo de Servicio</option>
                                     <option value="importacion">Servicio de Importación</option>
                                     <option value="marca_propia">Marca Propia</option>
@@ -365,13 +365,14 @@
                                 </select>
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control border-0" placeholder="Escribe tu mensaje aquí"></textarea>
+                                <textarea id="mensaje" class="form-control border-0" placeholder="Escribe tu mensaje aquí" required></textarea>
                             </div>
                             <div class="col-12">
                                 <button class="btn btn-primary w-100 py-3" type="submit">Enviar</button>
                             </div>
                         </div>
                     </form>
+                    <div id="response-message"></div>
                 </div>
             </div>
         </div>
@@ -379,6 +380,39 @@
 </div>
 <!-- Contact End -->
 
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Obtener los valores del formulario
+    var nombre = document.getElementById('nombre').value;
+    var email = document.getElementById('email').value;
+    var telefono = document.getElementById('telefono').value;
+    var tipoServicio = document.getElementById('tipoServicio').value;
+    var mensaje = document.getElementById('mensaje').value;
+    
+    // Hacer el POST al WebApp de Google Apps Script
+    fetch('URL_DE_TU_WEBAPP', { // Cambia esta línea por la URL de tu WebApp
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+            'nombre': nombre,
+            'email': email,
+            'telefono': telefono,
+            'tipoServicio': tipoServicio,
+            'mensaje': mensaje
+        })
+    }).then(function(response) {
+        // Mostrar un mensaje de éxito o error
+        document.getElementById('response-message').innerHTML = 'Gracias por tu mensaje, nos pondremos en contacto pronto.';
+    }).catch(function(error) {
+        document.getElementById('response-message').innerHTML = 'Hubo un error al enviar el mensaje. Por favor intenta nuevamente.';
+    });
+});
+</script>
 
 
    <!-- Footer Start -->
@@ -389,13 +423,13 @@
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Dirección</h4>
                 <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Tradepoint Express. C.A., Av. Milán, Caracas 1071, Miranda, Venezuela.</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+58 424 123 4567</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>contacto@tradepointexpress.com</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+584122376117</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>sales@tradepointexpress.com</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="https://www.wechat.com"><i class="fab fa-weixin"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="https://www.whatsapp.com"><i class="fab fa-whatsapp"></i></a>
+                    <!-- <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.instagram.com"><i class="fab fa-instagram"></i></a> -->
+                    <a class="btn btn-outline-light btn-social" href="weixin://dl/chat?mrJeppesen"><i class="fab fa-weixin"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://wa.me/584122376117"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
 
