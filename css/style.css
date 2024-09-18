@@ -202,7 +202,19 @@
 
 }
 
+.contact-direct {
+    text-align: center; /* Centra el texto */
+}
 
+.contact-direct h4 {
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.contact-direct .call-to-action {
+    font-size: 1.2rem; /* Tamaño de fuente para el llamado a la acción */
+    margin-bottom: 15px; /* Espaciado inferior */
+    color: var(--secondary); /* Color del texto */
+}
 
 
 
@@ -467,21 +479,22 @@
 
 /*** Footer ***/
 .footer {
-    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/map.png) center center no-repeat;
+    background: linear-gradient(rgba(6, 3, 21, .3), rgba(6, 3, 21, .3)), url(../img/map.png) center center no-repeat;
     background-size: cover;
 }
 
-.footer .btn.btn-social {
+.btn.btn-social {
     margin-right: 5px;
-    width: 35px;
-    height: 35px;
+    width: 60px; /* Ajusta el tamaño del círculo */
+    height: 60px; /* Ajusta el tamaño del círculo */
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--light);
-    border: 1px solid #FFFFFF;
-    border-radius: 35px;
+    border: 2px solid transparent; /* Añade un borde si es necesario */
+    border-radius: 50%; /* Mantiene la forma circular */
     transition: .3s;
+    background-color: rgba(255, 255, 255, 0.1); /* Color de fondo opcional */
 }
 
 .footer .btn.btn-social:hover {
@@ -490,14 +503,19 @@
 
 .footer .btn.btn-link {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     padding: 0;
     text-align: left;
     color: #FFFFFF;
     font-size: 15px;
     font-weight: normal;
-    text-transform: capitalize;
     transition: .3s;
+}
+
+/* Ajustar el ancho de las columnas en el footer */
+.footer .row.g-5 {
+    margin-left: -15px; /* Ajusta el margen izquierdo */
+    margin-right: -15px; /* Ajusta el margen derecho */
 }
 
 .footer .btn.btn-link::before {
