@@ -85,10 +85,10 @@
 .navbar-light .navbar-nav .nav-link {
     font-family: 'Caverson', sans-serif;
     position: relative;
-    margin-right: 30px;
+    margin-right: 15px;
     padding: 25px 0;
     color: var(--dark);
-    font-size: 1.2rem; /* Use rem for relative sizing */
+    font-size: 1rem; /* Use rem for relative sizing */
     /* text-transform: uppercase; */ /* Remove this line */
     outline: none;
     white-space: nowrap; /* Ensure text stays on one line */
@@ -97,8 +97,8 @@
 @media (max-width: 991.98px) {
     .navbar-light .navbar-nav .nav-link  {
         margin-right: 0;
-        padding: 10px 0;
-        font-size: 0.9rem; /* Adjust font size for smaller screens */
+        padding: 7px 0;
+        font-size: 0.8rem; /* Adjust font size for smaller screens */
         white-space: nowrap; /* Ensure text stays on one line */
     }
 
@@ -190,16 +190,13 @@
 }
 
 .contact-text {
-    font-size: 1.2rem; /* Ajusta el tamaño de la letra según sea necesario */
+    font-size: 1rem; /* Ajusta el tamaño de la letra según sea necesario */
     white-space: nowrap; /* Asegura que el texto se mantenga en una sola línea */
 }
 
 .contact-icon {
     color: #DB1F48; /* Cambia el color del icono a rojo */
     transform: scaleX(-1); /* Rota el icono horizontalmente */
-}
-
-
 }
 
 .contact-direct {

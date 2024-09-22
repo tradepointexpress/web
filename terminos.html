@@ -59,8 +59,17 @@
             <a href="index.html#import-services" class="nav-item nav-link">Servicios de Importación</a>
             <a href="index.html#contact" class="nav-item nav-link">Contáctanos</a>
         </div>
-        <div class="d-none d-lg-flex align-items-center pe-lg-5 contact-container">
-            <h4 class="m-0 me-3 contact-text"><i class="fa fa-phone me-3 contact-icon"></i>+58 412 2376117</h4>
+        <div class="d-none d-lg-flex align-items-center pe-lg-5 contact-container justify-content-center"> <!-- Added justify-content-center -->
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <!-- Display language based on the current page -->
+                    <span id="language-label">Idioma</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="index.html">Español</a></li>
+                    <li><a class="dropdown-item" href="index-en.html">Inglés</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
@@ -178,6 +187,22 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        // Change the language label based on the current page
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const languageLabel = document.getElementById('language-label');
+    
+            // Check the current page and set the language label accordingly
+            if (currentPage === 'terminos-en.html') {
+                languageLabel.textContent = 'Inglés';
+            } else if (currentPage === 'terminos.html') {
+                languageLabel.textContent = 'Español';
+            } else {
+                languageLabel.textContent = 'Idioma'; // Default label if neither page is matched
+            }
+        });
+    </script>
 </body>
 
 </html>
