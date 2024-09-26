@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradepoint Express - Categorías de Productos</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        #logo { background-color: #a93cd6; }
+        #belleza-estilo { background-color: #D12281; }
+        #cuidado-cabello { background-color: #FC5553; }
+        #bienestar-salud { background-color: #fdd807; }
+        #cuidado-manos-pies { background-color: #73c632; }
+        .categoria-titulo {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .carrusel {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 20px 0;
+        }
+        .producto {
+            display: inline-block;
+            width: 250px;
+            margin: 0 10px;
+            vertical-align: top;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .producto-imagenes {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        .producto-imagen {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+        .producto-imagen.activa {
+            display: block;
+        }
+        .producto-info {
+            margin-top: 10px;
+        }
+        .producto-codigo {
+            font-weight: bold;
+        }
+        .producto-descripcion {
+            font-size: 0.9em;
+            white-space: normal;
+        }
+        .boton-imagen {
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 5px 10px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="logo" class="section">
+        <div class="categoria-titulo">Logo</div>
+    </div>
+    <div id="belleza-estilo" class="section">
+        <div class="categoria-titulo">Belleza y Estilo</div>
+        <div class="carrusel">
+            <!-- 4 productos de Belleza y Estilo -->
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="belleza1.jpg" class="producto-imagen activa" alt="Producto 1">
+                    <img src="belleza2.jpg" class="producto-imagen" alt="Producto 1">
+                    <img src="belleza3.jpg" class="producto-imagen" alt="Producto 1">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">BE001</p>
+                    <p class="producto-descripcion">Crema facial hidratante</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="belleza4.jpg" class="producto-imagen activa" alt="Producto 2">
+                    <img src="belleza5.jpg" class="producto-imagen" alt="Producto 2">
+                    <img src="belleza6.jpg" class="producto-imagen" alt="Producto 2">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">BE002</p>
+                    <p class="producto-descripcion">Máscara de pestañas voluminizadora</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="belleza7.jpg" class="producto-imagen activa" alt="Producto 3">
+                    <img src="belleza8.jpg" class="producto-imagen" alt="Producto 3">
+                    <img src="belleza9.jpg" class="producto-imagen" alt="Producto 3">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">BE003</p>
+                    <p class="producto-descripcion">Labial de larga duración</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="belleza10.jpg" class="producto-imagen activa" alt="Producto 4">
+                    <img src="belleza11.jpg" class="producto-imagen" alt="Producto 4">
+                    <img src="belleza12.jpg" class="producto-imagen" alt="Producto 4">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">BE004</p>
+                    <p class="producto-descripcion">Base de maquillaje con protección solar</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+        </div>
+    </div>
+    <div id="cuidado-cabello" class="section">
+        <div class="categoria-titulo">Cuidado del Cabello</div>
+        <div class="carrusel">
+            <!-- 4 productos de Cuidado del Cabello -->
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="cabello1.jpg" class="producto-imagen activa" alt="Producto Cabello 1">
+                    <img src="cabello2.jpg" class="producto-imagen" alt="Producto Cabello 1">
+                    <img src="cabello3.jpg" class="producto-imagen" alt="Producto Cabello 1">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">CC001</p>
+                    <p class="producto-descripcion">Shampoo revitalizante</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="cabello4.jpg" class="producto-imagen activa" alt="Producto Cabello 2">
+                    <img src="cabello5.jpg" class="producto-imagen" alt="Producto Cabello 2">
+                    <img src="cabello6.jpg" class="producto-imagen" alt="Producto Cabello 2">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">CC002</p>
+                    <p class="producto-descripcion">Acondicionador reparador</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="cabello7.jpg" class="producto-imagen activa" alt="Producto Cabello 3">
+                    <img src="cabello8.jpg" class="producto-imagen" alt="Producto Cabello 3">
+                    <img src="cabello9.jpg" class="producto-imagen" alt="Producto Cabello 3">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">CC003</p>
+                    <p class="producto-descripcion">Mascarilla capilar intensiva</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="cabello10.jpg" class="producto-imagen activa" alt="Producto Cabello 4">
+                    <img src="cabello11.jpg" class="producto-imagen" alt="Producto Cabello 4">
+                    <img src="cabello12.jpg" class="producto-imagen" alt="Producto Cabello 4">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">CC004</p>
+                    <p class="producto-descripcion">Aceite capilar nutritivo</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+        </div>
+    </div>
+    <div id="bienestar-salud" class="section">
+        <div class="categoria-titulo">Bienestar y Salud</div>
+        <div class="carrusel">
+            <!-- 4 productos de Bienestar y Salud -->
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="salud1.jpg" class="producto-imagen activa" alt="Producto Salud 1">
+                    <img src="salud2.jpg" class="producto-imagen" alt="Producto Salud 1">
+                    <img src="salud3.jpg" class="producto-imagen" alt="Producto Salud 1">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">BS001</p>
+                    <p class="producto-descripcion">Suplemento vitamínico</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="salud4.jpg" class="producto-imagen activa" alt="Producto Salud 2">
+                    <img src="salud5.jpg" class="producto-imagen" alt="Producto Salud 2">
+                    <img src="salud6.jpg" class="producto-imagen" alt="Producto Salud 2">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">BS002</p>
+                    <p class="producto-descripcion">Té desintoxicante</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="salud7.jpg" class="producto-imagen activa" alt="Producto Salud 3">
+                    <img src="salud8.jpg" class="producto-imagen" alt="Producto Salud 3">
+                    <img src="salud9.jpg" class="producto-imagen" alt="Producto Salud 3">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">BS003</p>
+                    <p class="producto-descripcion">Aceite esencial relajante</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="salud10.jpg" class="producto-imagen activa" alt="Producto Salud 4">
+                    <img src="salud11.jpg" class="producto-imagen" alt="Producto Salud 4">
+                    <img src="salud12.jpg" class="producto-imagen" alt="Producto Salud 4">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">BS004</p>
+                    <p class="producto-descripcion">Colágeno en polvo</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+        </div>
+    </div>
+    <div id="cuidado-manos-pies" class="section">
+        <div class="categoria-titulo">Cuidado de Manos y Pies</div>
+        <div class="carrusel">
+            <!-- 4 productos de Cuidado de Manos y Pies -->
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="manos1.jpg" class="producto-imagen activa" alt="Producto Manos 1">
+                    <img src="manos2.jpg" class="producto-imagen" alt="Producto Manos 1">
+                    <img src="manos3.jpg" class="producto-imagen" alt="Producto Manos 1">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">MP001</p>
+                    <p class="producto-descripcion">Crema de manos hidratante</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="manos4.jpg" class="producto-imagen activa" alt="Producto Manos 2">
+                    <img src="manos5.jpg" class="producto-imagen" alt="Producto Manos 2">
+                    <img src="manos6.jpg" class="producto-imagen" alt="Producto Manos 2">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">MP002</p>
+                    <p class="producto-descripcion">Exfoliante para pies</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="manos7.jpg" class="producto-imagen activa" alt="Producto Manos 3">
+                    <img src="manos8.jpg" class="producto-imagen" alt="Producto Manos 3">
+                    <img src="manos9.jpg" class="producto-imagen" alt="Producto Manos 3">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">MP003</p>
+                    <p class="producto-descripcion">Mascarilla para manos</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+            <div class="producto">
+                <div class="producto-imagenes">
+                    <img src="manos10.jpg" class="producto-imagen activa" alt="Producto Manos 4">
+                    <img src="manos11.jpg" class="producto-imagen" alt="Producto Manos 4">
+                    <img src="manos12.jpg" class="producto-imagen" alt="Producto Manos 4">
+                </div>
+                <div class="producto-info">
+                    <p class="producto-codigo">MP004</p>
+                    <p class="producto-descripcion">Crema para talones agrietados</p>
+                </div>
+                <button class="boton-imagen">Siguiente imagen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const sections = document.querySelectorAll('.section');
+        const colors = ['#a93cd6', '#D12281', '#FC5553', '#fdd807', '#73c632', '#67d6c1'];
+
+        sections.forEach((section, index) => {
+            const nextColor = colors[index + 1] || colors[index];
+            
+            if (index === 0) {
+                gsap.to(section, {
+                    backgroundColor: '#a93cd6',
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top center',
+                        end: 'bottom center',
+                        scrub: true
+                    }
+                });
+            } else {
+                gsap.to(section, {
+                    backgroundColor: nextColor,
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top center',
+                        end: 'bottom center',
+                        scrub: true
+                    }
+                });
+            }
+        });
+
+        // Función para cambiar las imágenes de los productos
+        function setupImageSwitching() {
+            const botonesImagen = document.querySelectorAll('.boton-imagen');
+            botonesImagen.forEach(boton => {
+                boton.addEventListener('click', function() {
+                    const imagenes = this.parentElement.querySelectorAll('.producto-imagen');
+                    let imagenActiva = this.parentElement.querySelector('.producto-imagen.activa');
+                    let index = Array.from(imagenes).indexOf(imagenActiva);
+                    imagenActiva.classList.remove('activa');
+                    index = (index + 1) % imagenes.length;
+                    imagenes[index].classList.add('activa');
+                });
+            });
+        }
+
+        // Llamar a la función cuando el DOM esté cargado
+        document.addEventListener('DOMContentLoaded', setupImageSwitching);
+    </script>
+</body>
+</html>

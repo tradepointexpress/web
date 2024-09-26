@@ -547,4 +547,35 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     </script>
 </body>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = [
+            { id: 'logo-section', color: '#a93cd6' },
+            { id: 'belleza-estilo', color: '#D12281' },
+            { id: 'cuidado-cabello', color: '#FC5553' },
+            { id: 'bienestar-salud', color: '#fdd807' },
+            { id: 'cuidado-manos-pies', color: '#73c632' },
+            { id: 'footer', color: '#67d6c1' }
+        ];
+
+        function cambiarColorFondo() {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            sections.forEach(section => {
+                const element = document.getElementById(section.id);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= windowHeight / 2 && rect.bottom >= windowHeight / 2) {
+                        document.body.style.backgroundColor = section.color;
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('scroll', cambiarColorFondo);
+        cambiarColorFondo(); // Llamar inicialmente para establecer el color inicial
+    });
+</script>
+
 </html>
