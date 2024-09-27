@@ -22,14 +22,33 @@
             text-align: center;
             padding: 20px;
         }
-        #logo { background-color: #a93cd6; }
+        #logo { background-color: #F3E3FD; }
         #belleza-estilo { background-color: #D12281; }
         #cuidado-cabello { background-color: #FC5553; }
-        #bienestar-salud { background-color: #fdd807; }
-        #cuidado-manos-pies { background-color: #73c632; }
+        #bienestar-salud { background-color: #73c632; }
+        #cuidado-manos-pies { background-color: #67d6c1; }
+        #contacto { background-color: #a93cd6; }
         .categoria-titulo {
-            font-size: 2em;
-            margin-bottom: 20px;
+            font-size: 3em;
+            margin-bottom: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            padding-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: mainstay;
+        }
+        .categoria-titulo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: white;
+            border-radius: 2px;
         }
         .carrusel {
             width: 100%;
@@ -77,9 +96,83 @@
             margin-top: 5px;
             cursor: pointer;
         }
+        /* Estilos mejorados para la pestaña de categorías */
+        .categorias-tab {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(51, 51, 51, 0.9);
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .categorias-tab ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .categorias-tab li {
+            margin: 0 20px;
+        }
+        .categorias-tab a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .categorias-tab a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .categorias-tab a[href="#belleza-estilo"]:hover { background-color: rgba(209, 34, 129, 0.7); }
+        .categorias-tab a[href="#cuidado-cabello"]:hover { background-color: rgba(252, 85, 83, 0.7); }
+        .categorias-tab a[href="#logo"]:hover { background-color: rgba(243, 227, 253, 0.7); }
+        .categorias-tab a[href="#bienestar-salud"]:hover { background-color: rgba(115, 198, 50, 0.7); }
+        .categorias-tab a[href="#cuidado-manos-pies"]:hover { background-color: rgba(103, 214, 193, 0.7); }
+        .categorias-tab a[href="#contacto"]:hover { background-color: rgba(169, 60, 214, 0.7); }
+        /* Estilos para la sección de contacto */
+        #contacto {
+            padding: 50px 0;
+        }
+        .contacto-contenido {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .contacto-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .contacto-item {
+            flex-basis: 30%;
+            margin-bottom: 20px;
+        }
+        .contacto-item h3 {
+            margin-bottom: 10px;
+        }
+        .contacto-item p {
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
+    <div class="categorias-tab">
+        <ul>
+            <li><a href="#logo">Logo</a></li>
+            <li><a href="#belleza-estilo">Belleza y Estilo</a></li>
+            <li><a href="#cuidado-cabello">Cuidado del Cabello</a></li>
+            <li><a href="#bienestar-salud">Bienestar y Salud</a></li>
+            <li><a href="#cuidado-manos-pies">Cuidado de Manos y Pies</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </div>
+
     <div id="logo" class="section">
         <div class="categoria-titulo">Logo</div>
     </div>
@@ -300,6 +393,25 @@
         </div>
     </div>
 
+    <div id="contacto" class="section">
+        <div class="categoria-titulo">Contacto</div>
+        <div class="contacto-contenido">
+            <div class="contacto-info">
+                <div class="contacto-item">
+                    <h3>Dirección</h3>
+                    <p>Calle Principal 123<br>Ciudad, País<br>Código Postal</p>
+                </div>
+                <div class="contacto-item">
+                    <h3>Teléfono</h3>
+                    <p>+1 234 567 890</p>
+                </div>
+                <div class="contacto-item">
+                    <h3>Email</h3>
+                    <p>info@tradepointexpress.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 
@@ -307,31 +419,43 @@
         gsap.registerPlugin(ScrollTrigger);
 
         const sections = document.querySelectorAll('.section');
-        const colors = ['#a93cd6', '#D12281', '#FC5553', '#fdd807', '#73c632', '#67d6c1'];
+        const colors = ['#F3E3FD', '#D12281', '#FC5553', '#73c632', '#67d6c1', '#a93cd6'];
 
         sections.forEach((section, index) => {
-            const nextColor = colors[index + 1] || colors[index];
+            const sectionColor = colors[index];
             
-            if (index === 0) {
-                gsap.to(section, {
-                    backgroundColor: '#a93cd6',
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top center',
-                        end: 'bottom center',
-                        scrub: true
+            gsap.to(section, {
+                backgroundColor: sectionColor,
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    scrub: 1,
+                    toggleActions: 'play none none reverse'
+                },
+                ease: "power2.inOut",
+                duration: 0.5
+            });
+
+            // Animación para el título de la categoría
+            const categoryTitle = section.querySelector('.categoria-titulo');
+            if (categoryTitle) {
+                gsap.fromTo(categoryTitle, 
+                    { y: 50, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 50%',
+                            end: 'center center',
+                            scrub: 1,
+                            toggleActions: 'play none none reverse'
+                        },
+                        ease: "power2.out",
+                        duration: 0.8
                     }
-                });
-            } else {
-                gsap.to(section, {
-                    backgroundColor: nextColor,
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top center',
-                        end: 'bottom center',
-                        scrub: true
-                    }
-                });
+                );
             }
         });
 
