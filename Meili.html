@@ -11,6 +11,59 @@
             height: 100%;
             overflow-x: hidden;
         }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f9f9;
+            color: #000;
+            padding: 10px 20px;
+        }
+        .navbar-logo {
+            width: 100px;
+            height: auto;
+        }
+        .navbar-search {
+            flex: 0.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            padding: 5px 10px;
+        }
+        .navbar-search input {
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        .navbar-search input::placeholder {
+            color: #000;
+        }
+        .navbar-search button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .navbar-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 50%;
+        }
+        .navbar-menu a {
+            text-decoration: none;
+            color: #000;
+            transition: color 0.3s ease;
+            flex-basis: 50%;
+            font-size: 1.5em; /* Increased font size for better visibility */
+            line-height: 1.5; /* Increased line height for better readability */
+        }
+        .navbar-menu a:hover {
+            color: #666;
+        }
         .section {
             min-height: 100vh;
             display: flex;
@@ -162,15 +215,20 @@
     </style>
 </head>
 <body>
-    <div class="categorias-tab">
-        <ul>
-            <li><a href="#logo">Logo</a></li>
-            <li><a href="#belleza-estilo">Belleza y Estilo</a></li>
-            <li><a href="#cuidado-cabello">Cuidado del Cabello</a></li>
-            <li><a href="#bienestar-salud">Bienestar y Salud</a></li>
-            <li><a href="#cuidado-manos-pies">Cuidado de Manos y Pies</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+    <div class="navbar">
+        <img src="logo.png" alt="Logo" class="navbar-logo">
+        <div class="navbar-search">
+            <input type="text" placeholder="Busqueda">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="navbar-menu">
+            <a href="#belleza-estilo">Belleza y Estilo</a>
+            <a href="#cuidado-cabello">Cuidado del Cabello</a>
+            <a href="#bienestar-salud">Bienestar y Salud</a>
+            <a href="#cuidado-manos-pies">Cuidado de Manos y Pies</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#logo">Logo</a>
+        </div>
     </div>
 
     <div id="logo" class="section">
@@ -436,14 +494,14 @@
                 ease: "power2.inOut",
                 duration: 0.5
             });
-
             // Animación para el título de la categoría
             const categoryTitle = section.querySelector('.categoria-titulo');
             if (categoryTitle) {
+                let direction = index % 2 === 0 ? "100%" : "-100%";
                 gsap.fromTo(categoryTitle, 
-                    { y: 50, opacity: 0 },
+                    { x: direction, opacity: 0 },
                     {
-                        y: 0,
+                        x: "0%",
                         opacity: 1,
                         scrollTrigger: {
                             trigger: section,
