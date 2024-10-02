@@ -513,6 +513,19 @@
 
 .footer ul li {
     margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px; /* Espacio para la viñeta */
+}
+
+.footer ul li::before {
+    content: "\f105"; /* Código del ícono de flecha de Font Awesome */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--primary); /* Color rojo para la viñeta */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .footer a {
@@ -541,30 +554,36 @@
 @media (max-width: 768px) {
     .footer .row {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column; /* Cambiar a columna para versión móvil */
     }
     
     .footer .row > div {
-        flex: 0 0 50%;
-        max-width: 50%;
+        flex: 0 0 100%;
+        max-width: 100%;
         margin-bottom: 30px;
         text-align: left; /* Alinear texto a la izquierda */
     }
     
-    .footer .row > div:nth-child(odd) {
-        padding-right: 15px;
-    }
-    
-    .footer .row > div:nth-child(even) {
-        padding-left: 15px;
-    }
-    
     .footer h4 {
         font-size: 1rem; /* Reducir tamaño del título para móviles */
+        margin-bottom: 15px;
     }
     
     .footer ul li {
         margin-bottom: 10px; /* Reducir espacio entre elementos */
+        padding-left: 20px; /* Añadir espacio para la viñeta */
+        position: relative;
+    }
+    
+    .footer ul li::before {
+        content: "\f105"; /* Código del ícono de flecha de Font Awesome */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: var(--primary); /* Color de la viñeta */
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .footer .btn.btn-link::before {
@@ -576,6 +595,15 @@
         width: 80px; /* Reducir tamaño de los códigos QR */
         height: 80px;
         margin-right: 5px;
+    }
+    
+    .footer .categories ul {
+        display: block;
+    }
+    
+    .footer .categories ul li {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
 
@@ -684,5 +712,68 @@
     .container {
         padding-left: 15px;
         padding-right: 15px;
+    }
+}
+
+.footer .categories ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.footer .categories ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    width: 100%;
+    display: block;
+}
+
+.footer .categories ul li::before {
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.footer .categories a {
+    color: var(--light);
+    transition: 0.3s;
+    font-size: 0.9rem;
+    display: block;
+    width: 100%;
+}
+
+/* Eliminar cualquier float o display inline que pueda estar causando problemas */
+.footer .categories ul li,
+.footer .categories a {
+    float: none;
+    display: block;
+}
+
+/* Asegurar que no haya márgenes horizontales que puedan causar alineación incorrecta */
+.footer .categories ul,
+.footer .categories ul li,
+.footer .categories a {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media (max-width: 768px) {
+    .footer .row,
+    .footer .categories ul {
+        display: block;
+    }
+    
+    .footer .row > div,
+    .footer .categories ul li {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
