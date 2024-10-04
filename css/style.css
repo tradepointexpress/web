@@ -1,3 +1,4 @@
+/* Definición de variables */
 :root {
     --primary: #DB1F48;
     --secondary: #51CFED;
@@ -5,7 +6,7 @@
     --dark: #060315;
 }
 
-
+/* Estilos generales */
 .fw-medium {
     font-weight: 600 !important;
 }
@@ -18,8 +19,7 @@
     z-index: 99;
 }
 
-
-/*** Spinner ***/
+/* Spinner */
 #spinner {
     opacity: 0;
     visibility: hidden;
@@ -33,8 +33,7 @@
     opacity: 1;
 }
 
-
-/*** Button ***/
+/* Botón */
 .btn {
     font-family: 'Caverson', sans-serif;
     font-weight: 600;
@@ -44,21 +43,6 @@
 .btn.btn-primary,
 .btn.btn-secondary {
     color: #FFFFFF;
-}
-
-.btn-square {
-    width: 38px;
-    height: 38px;
-}
-
-.btn-sm-square {
-    width: 32px;
-    height: 32px;
-}
-
-.btn-lg-square {
-    width: 48px;
-    height: 48px;
 }
 
 .btn-square,
@@ -71,8 +55,7 @@
     font-weight: normal;
 }
 
-
-/*** Navbar ***/
+/* Navbar */
 .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
@@ -89,11 +72,11 @@
     padding: 25px 0;
     color: var(--dark);
     font-size: 1rem; /* Use rem for relative sizing */
-    /* text-transform: uppercase; */ /* Remove this line */
     outline: none;
     white-space: nowrap; /* Ensure text stays on one line */
 }
 
+/* Media queries para navbar */
 @media (max-width: 991.98px) {
     .navbar-light .navbar-nav .nav-link  {
         margin-right: 0;
@@ -124,39 +107,19 @@
     }
 }
 
-
+/* Estilos para navbar en hover y active */
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
     color: var(--primary);
 }
 
-@media (max-width: 991.98px) {
-    .navbar-light .navbar-nav .nav-link  {
-        margin-right: 0;
-        padding: 10px 0;
-        font-size: 0.9rem; /* Adjust font size for smaller screens */
-    }
-
-    .navbar-light .navbar-nav {
-        border-top: 1px solid #EEEEEE;
-    }
-}
-
-.navbar-light .navbar-brand,
-.navbar-light a.btn {
-    height: 75px;
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: var(--dark);
-    font-weight: 500;
-}
-
+/* Estilos para navbar en sticky-top */
 .navbar-light.sticky-top {
     top: -100px;
     transition: .5s;
 }
 
+/* Estilos para navbar en hover y active en versión desktop */
 @media (min-width: 992px) {
     .navbar-light .navbar-nav .nav-link::before {
         position: absolute;
@@ -196,110 +159,90 @@
         opacity: 1;
     }
 
-.contact-container {
-    display: flex;
-    align-items: center;
-}
-
-.contact-container:hover .contact-icon,
-.contact-container:hover .contact-text {
-    color: var(--secondary);
-}
-
-.contact-text {
-    font-size: 1rem; /* Ajusta el tamaño de la letra según sea necesario */
-    white-space: nowrap; /* Asegura que el texto se mantenga en una sola línea */
-}
-
-.contact-icon {
-    color: #DB1F48; /* Cambia el color del icono a rojo */
-    transform: scaleX(-1); /* Rota el icono horizontalmente */
-}
-
-.contact-direct {
-    text-align: center; /* Centra el texto */
-}
-
-.contact-direct h4 {
-    margin-bottom: 20px; /* Espaciado inferior */
-}
-
-.contact-direct .call-to-action {
-    font-size: 1.2rem; /* Tamaño de fuente para el llamado a la acción */
-    margin-bottom: 15px; /* Espaciado inferior */
-    color: var(--secondary); /* Color del texto */
-}
-
-
-
-/*** Header ***/
-@media (max-width: 768px) {
-    .header-carousel .owl-carousel-item {
-        position: relative;
-        min-height: 500px;
+    .contact-container {
+        display: flex;
+        align-items: center;
     }
-    
-    .header-carousel .owl-carousel-item img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+
+    .contact-container:hover .contact-icon,
+    .contact-container:hover .contact-text {
+        color: var(--secondary);
+    }
+
+    .contact-text {
+        font-size: 1rem; /* Ajusta el tamaño de la letra según sea necesario */
+        white-space: nowrap; /* Asegura que el texto se mantenga en una sola línea */
+    }
+
+    .contact-icon {
+        color: #DB1F48; /* Cambia el color del icono a rojo */
+        transform: scaleX(-1); /* Rota el icono horizontalmente */
+    }
+
+    .contact-direct {
+        text-align: center; /* Centra el texto */
+    }
+
+    .contact-direct h4 {
+        margin-bottom: 20px; /* Espaciado inferior */
+    }
+
+    .contact-direct .call-to-action {
+        font-size: 1.2rem; /* Tamaño de fuente para el llamado a la acción */
+        margin-bottom: 15px; /* Espaciado inferior */
+        color: var(--secondary); /* Color del texto */
+    }
+}
+
+/* Estilos para header en versión mobile */
+@media (max-width: 768px) {
+    .header-carousel .owl-carousel-item h1 {
+        font-size: 5vw; /* Ajusta el tamaño del h1 basado en el ancho de la pantalla */
+    }
+
+    .header-carousel .owl-carousel-item h5,
+    .header-carousel .owl-carousel-item p,
+    .header-carousel .owl-carousel-item .btn {
+        display: none; /* Oculta h5, p y botones en móviles */
+    }
+}
+
+/* Estilos para header en versión desktop */
+@media (min-width: 769px) {
+    .header-carousel .owl-carousel-item h1 {
+        font-size: 3rem; /* Tamaño del h1 para pantallas más grandes */
     }
 
     .header-carousel .owl-carousel-item h5,
     .header-carousel .owl-carousel-item p {
-        font-size: 14px !important;
-        font-weight: 400 !important;
+        font-size: 1.5rem; /* Tamaño del h5 y p para pantallas más grandes */
     }
 
-    .header-carousel .owl-carousel-item h1 {
-        font-size: 30px;
-        font-weight: 600;
+    .header-carousel .owl-carousel-item .btn {
+        font-size: 1rem; /* Tamaño del texto del botón para pantallas más grandes */
     }
 }
 
-.header-carousel .owl-nav {
-    position: absolute;
-    top: 50%;
-    right: 8%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
+/* Estilos para header-carousel en versión mobile */
+.header-carousel .owl-carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-.header-carousel .owl-nav .owl-prev,
-.header-carousel .owl-nav .owl-next {
-    margin: 7px 0;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    background: transparent;
-    border: 1px solid #FFFFFF;
-    border-radius: 45px;
-    font-size: 22px;
-    transition: .5s;
+/* Hide arrows on mobile */
+@media (max-width: 768px) {
+    .owl-carousel .owl-nav {
+        display: none;
+    }
 }
 
-.header-carousel .owl-nav .owl-prev:hover,
-.header-carousel .owl-nav .owl-next:hover {
-    background: var(--primary);
-    border-color: var(--primary);
-}
-
-.page-header {
-    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/carousel-1.jpg) center center no-repeat;
-    background-size: cover;
-}
-
+/* Estilos para breadcrumb */
 .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
 }
 
-
-/*** About ***/
+/* Estilos para about */
 @media (min-width: 992px) {
     .container.about {
         max-width: 100% !important;
@@ -310,24 +253,12 @@
     }
 }
 
-@media (min-width: 1200px) {
-    .about-text  {
-        padding-right: calc(((100% - 1140px) / 2) + .75rem);
-    }
-}
-
-@media (min-width: 1400px) {
-    .about-text  {
-        padding-right: calc(((100% - 1320px) / 2) + .75rem);
-    }
-}
-
+/* Estilos para bg-custom */
 .bg-custom {
     background-color: #004369;
 }
 
-
-/*** Feature ***/
+/* Estilos para feature */
 @media (min-width: 992px) {
     .container.feature {
         max-width: 100% !important;
@@ -338,136 +269,46 @@
     }
 }
 
-@media (min-width: 1200px) {
-    .feature-text  {
-        padding-left: calc(((100% - 1140px) / 2) + .75rem);
-    }
-}
-
-@media (min-width: 1400px) {
-    .feature-text  {
-        padding-left: calc(((100% - 1320px) / 2) + .75rem);
-    }
-}
-
-
-/*** Service, Price & Team ***/
+/* Estilos para service, price & team */
 .service-item,
 .price-item,
 .team-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, .07);
 }
 
-.service-item img,
-.team-item img {
-    transition: .5s;
-}
-
+/* Estilos para service-item, team-item en hover */
 .service-item:hover img,
 .team-item:hover img {
     transform: scale(1.1);
 }
 
-.service-item a.btn-slide,
-.price-item a.btn-slide,
-.team-item div.btn-slide {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    font-size: 0;
-}
-
-.service-item a.btn-slide i,
-.service-item a.btn-slide span,
-.price-item a.btn-slide i,
-.price-item a.btn-slide span,
-.team-item div.btn-slide i,
-.team-item div.btn-slide span {
-    position: relative;
-    height: 40px;
-    padding: 0 15px;
-    display: inline-flex;
-    align-items: center;
-    font-size: 16px;
-    color: #FFFFFF;
-    background: var(--primary);
-    border-radius: 0 35px 35px 0;
-    transition: .5s;
-    z-index: 2;
-}
-
-.team-item div.btn-slide span a i {
-    padding: 0 10px;
-}
-
-.team-item div.btn-slide span a:hover i {
-    background: var(--secondary);
-}
-
-.service-item a.btn-slide span,
-.price-item a.btn-slide span,
-.team-item div.btn-slide span {
-    padding-left: 0;
-    left: -100%;
-    z-index: 1;
-}
-
+/* Estilos para service-item, price-item, team-item en hover */
 .service-item:hover a.btn-slide i,
 .price-item:hover a.btn-slide i,
 .team-item:hover div.btn-slide i {
     border-radius: 0;
 }
 
+/* Estilos para service-item, price-item, team-item en hover */
 .service-item:hover a.btn-slide span,
 .price-item:hover a.btn-slide span,
 .team-item:hover div.btn-slide span {
     left: 0;
 }
 
-.service-item a.btn-slide:hover i,
-.service-item a.btn-slide:hover span,
-.price-item a.btn-slide:hover i,
-.price-item a.btn-slide:hover span {
-    background: var(--secondary);
-}
-
-
-/*** Testimonial ***/
-.testimonial-carousel .owl-item .testimonial-item {
-    position: relative;
-    transition: .5s;
-}
-
+/* Estilos para testimonial */
 .testimonial-carousel .owl-item.center .testimonial-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
     animation: pulse 1s ease-out .5s;
 }
 
-.testimonial-carousel .owl-dots {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.testimonial-carousel .owl-dot {
-    position: relative;
-    display: inline-block;
-    margin: 0 5px;
-    width: 15px;
-    height: 15px;
-    background: var(--primary);
-    border: 5px solid var(--light);
-    border-radius: 15px;
-    transition: .5s;
-}
-
+/* Estilos para testimonial en hover y active */
 .testimonial-carousel .owl-dot.active {
     background: var(--light);
     border-color: var(--primary);
 }
 
-
-/*** Contact ***/
+/* Estilos para contact */
 @media (min-width: 992px) {
     .container.contact-page {
         max-width: 100% !important;
@@ -478,25 +319,12 @@
     }
 }
 
-@media (min-width: 1200px) {
-    .contact-page .contact-form  {
-        padding-left: calc(((100% - 1140px) / 2) + .75rem);
-    }
-}
-
-@media (min-width: 1400px) {
-    .contact-page .contact-form  {
-        padding-left: calc(((100% - 1320px) / 2) + .75rem);
-    }
-}
-
-
-/*** Footer ***/
+/* Estilos para footer */
 .footer {
     background: linear-gradient(rgba(6, 3, 21, .8), rgba(6, 3, 21, .8)), url(../img/map.png) center center no-repeat;
     background-size: cover;
     color: #FFFFFF;
-    padding: 50px 0;
+    padding: 25px 0;
 }
 
 .footer h4 {
@@ -532,11 +360,6 @@
     color: var(--light);
     transition: 0.3s;
     font-size: 0.9rem; /* Ajustar tamaño de fuente */
-}
-
-.footer a:hover {
-    color: var(--primary);
-    text-decoration: none;
 }
 
 .footer .contact-info i {
@@ -607,6 +430,7 @@
     }
 }
 
+/* Estilos para btn-social */
 .btn.btn-social {
     margin-right: 5px;
     width: 60px; /* Ajusta el tamaño del círculo */
@@ -625,6 +449,7 @@
     color: #25d366;
 }
 
+/* Estilos para btn-link */
 .footer .btn.btn-link {
     display: block;
     margin-bottom: 10px;
@@ -666,6 +491,7 @@
     color: var(--light);
 }
 
+/* Estilos para custom-carousel-control */
 .custom-carousel-control {
     width: 50px;
     height: 50px;
@@ -715,6 +541,7 @@
     }
 }
 
+/* Estilos para categories */
 .footer .categories ul {
     list-style: none;
     padding: 0;
@@ -765,6 +592,7 @@
     margin-right: 0;
 }
 
+/* Estilos para categories en versión mobile */
 @media (max-width: 768px) {
     .footer .row,
     .footer .categories ul {
@@ -775,5 +603,37 @@
     .footer .categories ul li {
         width: 100%;
         margin-bottom: 10px;
+    }
+}
+
+/* Reducir espaciado entre módulos del carrusel */
+.header-carousel .owl-carousel-item {
+    margin-bottom: 5px; /* Ajusta el margen inferior */
+}
+
+.header-carousel .owl-carousel-item h1 {
+    margin-bottom: 5px; /* Ajusta el margen inferior del h1 */
+}
+
+.header-carousel .owl-carousel-item p {
+    margin-bottom: 5px; /* Ajusta el margen inferior del párrafo */
+}
+
+.header-carousel .owl-carousel-item .btn {
+    margin-bottom: 5px; /* Ajusta el margen inferior del botón */
+}
+
+/* Estilos para el footer con cinco columnas */
+.footer .row.g-5 > div {
+    flex: 0 0 20%; /* Ajusta cada columna para ocupar el 20% del ancho */
+    max-width: 20%; /* Asegura que cada columna no exceda el 20% */
+}
+
+/* Estilos responsivos para el footer en dispositivos móviles */
+@media (max-width: 768px) {
+    .footer .row.g-5 > div {
+        flex: 0 0 100%; /* Cambia a 100% para dispositivos móviles */
+        max-width: 100%; /* Asegura que cada columna ocupe el 100% */
+        margin-bottom: 30px; /* Espaciado inferior entre columnas */
     }
 }

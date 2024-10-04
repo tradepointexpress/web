@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <!-- Meta Tags -->
     <meta charset="utf-8">
     <title>Tradepoint Express - Importer of Wellness and Personal Care</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -59,10 +60,9 @@
             <a href="#import-services" class="nav-item nav-link">Import Services</a>
             <a href="#contact" class="nav-item nav-link">Contact Us</a>
         </div>
-        <div class="d-none d-lg-flex align-items-center pe-lg-5 contact-container justify-content-center"> <!-- Added justify-content-center -->
+        <div class="d-flex align-items-center pe-lg-5 contact-container justify-content-center">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                    <!-- Display language based on the current page -->
                     <span id="language-label">Language</span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -97,7 +97,7 @@
 
         <!-- Banner 2: Import Services -->
         <div class="owl-carousel-item position-relative">
-            <img class="img-fluid" src="img/carousel-2.png" alt="">
+            <img class="img-fluid" src="img/carousel-2.jpg" alt="">
             <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(6, 3, 21, .5);">
                 <div class="container">
                     <div class="row justify-content-start">
@@ -449,19 +449,19 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 
 
    <!-- Footer Start -->
-<div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 6rem;">
+   <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 6rem;">
     <div class="container py-5">
         <div class="row g-5">
-            <!-- Dirección -->
-            <div class="col-lg-3 col-md-6">
+            <!-- Address -->
+            <div class="col-lg-2 col-md-6">
                 <h4 class="text-light mb-4">Address</h4>
                 <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Tradepoint Express. C.A., Milan Avenue, Caracas 1071, Miranda, Venezuela.</p>
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="https://wa.me/584122376117" target="_blank">+58 412 2376117</a></p>
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:sales@tradepointexpress.com">sales@tradepointexpress.com</a></p>
             </div>
 
-            <!-- Product Catalog -->
-            <div class="col-lg-3 col-md-6">
+            <!-- Categories -->
+            <div class="col-lg-2 col-md-6">
                 <h4 class="text-light mb-4">Categories</h4>
                 <a class="btn btn-link" href="#cuidado-manos-pies">Hand and Foot Care</a>
                 <a class="btn btn-link" href="#bienestar-salud">Wellness and Health</a>
@@ -469,8 +469,16 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
                 <a class="btn btn-link" href="#cuidado-cabello">Hair Care</a>
             </div>
 
+            <!-- Brands -->
+            <div class="col-lg-2 col-md-6">
+                <h4 class="text-light mb-4">Brands</h4>
+                <a href="https://meili.tradepointexpress.com/" target="_blank">
+                    <img src="img/Meili_logo.png" alt="Meili Logo" class="img-fluid" style="width: 100px; height: auto;">
+                </a>
+            </div>
+
             <!-- Quick Links -->
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-2 col-md-6">
                 <h4 class="text-light mb-4">Quick Links</h4>
                 <a class="btn btn-link" href="#about">About Us</a>
                 <a class="btn btn-link" href="#contact">Contact</a>
@@ -478,24 +486,22 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
                 <a class="btn btn-link" href="terminos-en.html">Terms and Conditions</a>
             </div>
 
-                    <!-- WhatsApp and WeChat Icons -->
-                    <div class="col-lg-3 col-md-6 contact-direct"> <!-- Added class contact-direct -->
-                        <h4 class="text-light mb-4">Direct Contact</h4>
-                        <p class="call-to-action">Scan me for more information!</p> <!-- Call to action -->
-                        <div class="row g-3">
-                            <div class="col-6 d-flex flex-column align-items-center">
-                                <a href="https://wa.me/584122376117" class="btn btn-outline-light btn-social mb-3">
-                                    <i class="fab fa-whatsapp fa-2x"></i>
-                                </a>
-                                <img src="img/qr-whatsapp.jpeg" alt="QR WhatsApp" class="img-fluid" style="width: 80%; height: auto;">
-                            </div>
-                            <div class="col-6 d-flex flex-column align-items-center">
-                                <button class="btn btn-outline-light btn-social mb-3" onclick="event.preventDefault();">
-                                    <i class="fab fa-weixin fa-2x"></i>
-                                </button>
-                                <img src="img/wechat.jpeg" alt="QR WeChat" class="img-fluid" style="width: 80%; height: auto;">
-                            </div>
-                        </div>
+            <!-- Direct Contact -->
+            <div class="col-lg-4 col-md-6 contact-direct">
+                <h4 class="text-light mb-4">Direct Contact</h4>
+                <p class="call-to-action">Scan me for more information!</p>
+                <div class="row g-3">
+                    <div class="col-6 d-flex flex-column align-items-center">
+                        <a href="https://wa.me/584122376117" class="btn btn-outline-light btn-social mb-3">
+                            <i class="fab fa-whatsapp fa-2x"></i>
+                        </a>
+                        <img src="img/qr-whatsapp.jpeg" alt="QR WhatsApp" class="img-fluid" style="width: 80%; height: auto;">
+                    </div>
+                    <div class="col-6 d-flex flex-column align-items-center">
+                        <button class="btn btn-outline-light btn-social mb-3" onclick="event.preventDefault();">
+                            <i class="fab fa-weixin fa-2x"></i>
+                        </button>
+                        <img src="img/wechat.png" alt="QR WeChat" class="img-fluid" style="width: 80%; height: auto;">
                     </div>
                 </div>
             </div>
@@ -505,8 +511,8 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         <div class="copyright">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Tradepoint Express</a>. Todos los Derechos Reservados.
-                </div
+                    &copy; <a class="border-bottom" href="#">Tradepoint Express</a>. All Rights Reserved.
+                </div>
             </div>
         </div>
     </div>
